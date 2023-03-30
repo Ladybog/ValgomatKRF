@@ -20,7 +20,7 @@
 
       <script>
         var currentQuestion = 0;
-        var totalQuestions = 10;
+        var totalQuestions = 3;
         var scores = []; 
 
         var questions = [
