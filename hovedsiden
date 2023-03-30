@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>KRF VALGOMAT</title>
+    <link rel="stylesheet" href="krfcss.css" />
+  </head>
+  <body>
+    <div id="maintxt">
+      <h1 id="text">KRF VALGOMAT</h1>
+      <img
+        id="logo"
+        src="https://cdn.discordapp.com/attachments/935801811703582800/1088379547109572648/KRF.png"
+      />
+    </div>
+
+    <div id="hoveddiv"></div>
+  </body>
+</html>
