@@ -14,12 +14,12 @@
 
     <div id="hoveddiv">
       <div id="quiz-container">
-        <h1>Hav tenker du om disse politiske sakene?</h1>
-        <p id="question">Insert question here...</p>
-        <button class="pynt" onclick="answer(0)">Answer 1</button>
-        <button class="pynt" onclick="answer(1)">Answer 2</button>
-        <button class="pynt" onclick="answer(2)">Answer 3</button>
-        <button class="pynt" onclick="answer(3)">Answer 4</button>
+        <h1>Hva tenker du om disse politiske sakene?</h1>
+        <p id="question">Hva mener du om fraværsgrensa</p>
+        <button class="pynt" onclick="answer(0)">Krympe den</button>
+        <button class="pynt" onclick="answer(1)">Beholde den som der er</button>
+        <button class="pynt" onclick="answer(2)">Sette den opp</button>
+        <button class="pynt" onclick="answer(3)">Fjerne den</button>
         <button clas="pynt" id="next" onclick="nextQuestion()">
           Neste spørsmål
         </button>
@@ -37,93 +37,93 @@
 
         var questions = [
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Hva mener du om fraværsgrensa',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'Krympe den', score: 0 },
+              { text: 'Beholde den som der er', score: 5 },
+              { text: 'Sette den opp', score: 10 },
+              { text: 'Fjerne den', score: 3 },
             ],
           },
           {
-            question: 'What is your stance on gun control?',
+            question: 'Privateide barnehager og sykehus er bra',
             answers: [
-              { text: 'Strongly support stricter gun control laws', score: 3 },
-              { text: 'Somewhat support stricter gun control laws', score: 2 },
-              { text: 'Somewhat oppose stricter gun control laws', score: 1 },
-              { text: 'Strongly oppose stricter gun control laws', score: 0 },
+              { text: 'helt uenig', score: 5 },
+              { text: 'litt uenig', score: 10 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
           {
-            question: 'What is your stance on climate change?',
+            question: 'Vi trenger en streng innvandringspolitikk ',
             answers: [
-              { text: 'Strongly agree that it is a major issue', score: 3 },
-              { text: 'Somewhat agree that it is a major issue', score: 2 },
-              { text: 'Somewhat disagree that it is a major issue', score: 1 },
-              { text: 'Strongly disagree that it is a major issue', score: 0 },
+              { text: 'helt uenig', score: 10 },
+              { text: 'litt uenig', score: 5 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Vi bør slutte å lete etter olje',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 0 },
+              { text: 'litt uenig', score: 3 },
+              { text: 'litt enig', score: 10 },
+              { text: 'helt enig', score: 5 }, 
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Norge burde ta inn flere flyktninger',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 0 },
+              { text: 'litt uenig', score: 3 },
+              { text: 'litt enig', score: 5 },
+              { text: 'helt enig', score: 10 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'EØS er dårlig for Norge',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 10 },
+              { text: 'litt uenig', score: 5 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Narkotika skal ikke straffes hvis det er til egenbruk',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 10 },
+              { text: 'litt uenig', score: 5 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'skal sex uten samtykke skal være straffbart med loven',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 0 },
+              { text: 'litt uenig', score: 3 },
+              { text: 'litt enig', score: 5 },
+              { text: 'helt enig', score: 10 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Butikker bør å ha lov til å holde butikkene åpne på søndager',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 10 },
+              { text: 'litt uenig', score: 5 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
           {
-            question: 'What is your stance on healthcare reform?',
+            question: 'Bør staten eie flere bedrifter',
             answers: [
-              { text: 'Strongly agree with universal healthcare', score: 3 },
-              { text: 'Somewhat agree with universal healthcare', score: 2 },
-              { text: 'Somewhat disagree with universal healthcare', score: 1 },
-              { text: 'Strongly disagree with universal healthcare', score: 0 },
+              { text: 'helt uenig', score: 5 },
+              { text: 'litt uenig', score: 10 },
+              { text: 'litt enig', score: 3 },
+              { text: 'helt enig', score: 0 },
             ],
           },
         ];
