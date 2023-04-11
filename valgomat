@@ -15,7 +15,7 @@
 
       <div id="score-container" style="display:none">
         <h1>Your Total Score</h1>
-        <p id="total-score"></p>
+        <p><span id="total-score">0</span>%</p>
       </div>
 
       <script>
@@ -81,6 +81,7 @@
         var totalScore = scores.reduce(function(a, b) {
           return a + b;
         });
+
 
         document.getElementById("quiz-container").style.display = "none";
         document.getElementById("score-container").style.display = "block";
