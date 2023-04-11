@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <title>KRF VALGOMAT</title>
+    <link rel="stylesheet" href="krfcss.css" />
+  </head>
+  <body>
+    <div id="maintxt">
+      <h1 id="text">KRF VALGOMAT</h1>
+      <img
+        id="logo"
+        src="https://cdn.discordapp.com/attachments/935801811703582800/1088379547109572648/KRF.png"
+      />
+    </div>
+
+    <div id="hoveddiv">
+      <div id="quiz-container">
+        <h1>Hav tenker du om disse politiske sakene?</h1>
+        <p id="question">Insert question here...</p>
+        <button class="pynt" onclick="answer(0)">Answer 1</button>
+        <button class="pynt" onclick="answer(1)">Answer 2</button>
+        <button class="pynt" onclick="answer(2)">Answer 3</button>
+        <button class="pynt" onclick="answer(3)">Answer 4</button>
+        <button clas="pynt" id="next" onclick="nextQuestion()">
+          Neste spørsmål
+        </button>
+      </div>
+
+      <div id="score-container" style="display: none">
+        <h1>Ditt resultat</h1>
+        <p><span id="total-score">0</span>%</p>
+      </div>
+
+      <script>
+        var currentQuestion = 0;
+        var totalQuestions = 10;
+        var scores = [];
+
+        var questions = [
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on gun control?',
+            answers: [
+              { text: 'Strongly support stricter gun control laws', score: 3 },
+              { text: 'Somewhat support stricter gun control laws', score: 2 },
+              { text: 'Somewhat oppose stricter gun control laws', score: 1 },
+              { text: 'Strongly oppose stricter gun control laws', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on climate change?',
+            answers: [
+              { text: 'Strongly agree that it is a major issue', score: 3 },
+              { text: 'Somewhat agree that it is a major issue', score: 2 },
+              { text: 'Somewhat disagree that it is a major issue', score: 1 },
+              { text: 'Strongly disagree that it is a major issue', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+          {
+            question: 'What is your stance on healthcare reform?',
+            answers: [
+              { text: 'Strongly agree with universal healthcare', score: 3 },
+              { text: 'Somewhat agree with universal healthcare', score: 2 },
+              { text: 'Somewhat disagree with universal healthcare', score: 1 },
+              { text: 'Strongly disagree with universal healthcare', score: 0 },
+            ],
+          },
+        ];
+
+        function answer(choice) {
+          var pointScore = questions[currentQuestion].answers[choice].score;
+          scores.push(pointScore);
+
+          console.log(
+            'User chose answer ' +
+              (choice + 1) +
+              ': ' +
+              questions[currentQuestion].answers[choice].text +
+              ' and scored ' +
+              pointScore +
+              ' points.'
+          );
+
+          document.getElementById('next').style.display = 'block';
+
+          for (var i = 0; i < questions[currentQuestion].answers.length; i++) {
+            document.getElementsByTagName('button')[i].disabled = true;
+          }
+        }
+
+        function nextQuestion() {
+          if (currentQuestion < totalQuestions - 1) {
+            currentQuestion++;
+
+            document.getElementById('question').innerHTML =
+              questions[currentQuestion].question;
+            for (
+              var i = 0;
+              i < questions[currentQuestion].answers.length;
+              i++
+            ) {
+              document.getElementsByTagName('button')[i].innerHTML =
+                questions[currentQuestion].answers[i].text;
+              document.getElementsByTagName('button')[i].disabled = false;
+            }
+
+            document.getElementById('next').style.display = 'none';
+          } else {
+            var totalScore = scores.reduce(function (a, b) {
+              return a + b;
+            });
+
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('score-container').style.display = 'block';
+
+            document.getElementById('total-score').innerHTML = totalScore;
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
